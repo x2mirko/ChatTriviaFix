@@ -75,6 +75,7 @@ const startListener = () => {
             let stake = parseInt(params[2]);
             if (!stake) stake = 100;
             if (stake > fieldData.maxBet) stake = fieldData.maxBet;
+            if (stake < 1) stake = 1;
             if (fieldData.mode === "singleuser") {
                 if (typeof contestants[user] !== "undefined") return;
                 jebaitedAPI.getPoints(user).then((userPoints) => {
