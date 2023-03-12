@@ -65,7 +65,7 @@ const startListener = () => {
     window.addEventListener('onEventReceived', function (obj) {
         if (obj.detail.listener !== "message") return;
         const data = obj.detail.event.data;
-        const user = data["displayName"];
+        const user = data["nick"];
         const message = data["text"];
         if (message.startsWith(fieldData.questionCommand)) {
             const params = message.split(" ");
